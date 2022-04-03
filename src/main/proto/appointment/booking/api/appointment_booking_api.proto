@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package appointment.booking.api;
+
+option java_outer_classname = "AppointmentBookingApi";
+
+import "akkaserverless/annotations.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+service AppointmentBooking {
+  option (akkaserverless.codegen) = {
+    event_sourced_entity: {
+      name: "appointment.booking.domain.AppointmentBookingEntity"
+      entity_type: "eventsourced-appointment-booking"
+      state: "appointment.booking.domain.AppointmentState"
+      events: [
+        "appointment.booking.domain.AppointmentCreated",
+        "appointment.booking.domain.AppointmentDeleted"]
+    }
+  };
+
+  rpc CreateAppointment(AddAppointmentBooking) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/appointments/{owner_id}/{vet_id}/new"
+      body: "*"
+    };
+  }
+  rpc UpdateAppointment(AddAppointmentBooking) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/appointments/{appointment_id}/edit"
+      body: "*"
+    };
+  }
+  rpc DeleteAppointment(DeleteAppointmentBooking) returns (google.protobuf.Empty) {
+    option (google.api.http).post = "/appointments/{appointment_id}/delete";
+  }
+  rpc FetchOwnerAppointments(GetOwnerAppointments) returns (Appointments) {
+    option (google.api.http) = {
+      get: "/appointments/owner/{owner_id}"
+     /* additional_bindings: {
+        get: "/appointments/owner/{owner_id}"
+        response_body: "items"
+      }*/
+    };
+  }
+  rpc FetchVetAppointments(GetVetAppointments) returns (Appointments) {
+    option (google.api.http) = {
+      get: "/appointments/vet/{vet_id}"
+      /*additional_bindings: {
+        get: "/carts/{cart_id}/items"
+        response_body: "items"
+      }*/
+    };
+  }
+}
+message Appointments {
+  repeated AppointmentDetails bookings = 1;
+}
+
+message AppointmentDetails {
+  string appointment_id = 1;
+  string appointment_time = 2;
+  string appointment_date = 3;
+  string appointment_desc = 4;
+  string owner_id = 5;
+  string vet_id = 6;
+}
+message AddAppointmentBooking {
+  string appointment_id = 1 [(akkaserverless.field).entity_key = true];
+  string appointment_time = 2;
+  string appointment_date = 3;
+  string appointment_desc = 4;
+  string owner_id = 5;
+  string vet_id = 6;
+}
+
+message DeleteAppointmentBooking {
+  string appointment_id = 1 [(akkaserverless.field).entity_key = true];;
+}
+
+message GetOwnerAppointments{
+  string owner_id = 1 [(akkaserverless.field).entity_key = true];
+}
+
+message GetVetAppointments{
+  string vet_id = 1 [(akkaserverless.field).entity_key = true];
+}

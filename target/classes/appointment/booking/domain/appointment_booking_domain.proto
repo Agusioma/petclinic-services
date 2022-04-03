@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package appointment.booking.domain;
+
+option java_outer_classname = "AppointmentBookingDomain";
+
+message AppointmentState {
+  repeated AppointmentDetails bookings = 1;
+}
+
+message AppointmentDetails {
+  string appointment_id = 1;
+  string appointment_time = 2;
+  string appointment_date = 3;
+  string appointment_desc = 4;
+  string owner_id = 5;
+  string vet_id = 6;
+}
+message AppointmentCreated {
+  AppointmentDetails appointment = 1;
+}
+
+message AppointmentDeleted {
+  string appointment_id = 1;
+}
+
