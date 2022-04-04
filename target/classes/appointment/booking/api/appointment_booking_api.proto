@@ -46,7 +46,7 @@ service AppointmentBooking {
   }
   rpc FetchVetAppointments(GetVetAppointments) returns (Appointments) {
     option (google.api.http) = {
-      get: "/appointments/vet/{vet_id}"
+      get: "/appointments/vet/{owner_id}/bookings/{vet_id}"
       /*additional_bindings: {
         get: "/carts/{cart_id}/items"
         response_body: "items"
@@ -95,5 +95,6 @@ message GetOwnerAppointments{
 }
 
 message GetVetAppointments{
-  string vet_id = 1 [(akkaserverless.field).entity_key = true];
+  string vet_id = 1;
+  string owner_id = 2 [(akkaserverless.field).entity_key = true];
 }

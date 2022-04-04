@@ -113,7 +113,14 @@ public class AppointmentBookingEntity extends AbstractAppointmentBookingEntity {
   public Effect<AppointmentBookingApi.Appointments> fetchVetAppointments(
           AppointmentBookingDomain.AppointmentState currentState,
           AppointmentBookingApi.GetVetAppointments getVetAppointments) {
-    return effects().error("The command handler for `FetchVetAppointments` is not implemented, yet");
+    List<AppointmentBookingApi.AppointmentDetails> apiAppointments = currentState.getBookingsList().stream()
+            .filter(appointmentDetails -> appointmentDetails.getVetId().equals(getVetAppointments.getVetId()))
+            .map(this::convert)
+            //.sorted(Comparator.comparing(AppointmentBookingApi.AppointmentDetails::getAppointmentId))
+            .collect(Collectors.toList());
+    AppointmentBookingApi.Appointments apiBoookings = AppointmentBookingApi.Appointments.newBuilder()
+            .addAllBookings(apiAppointments).build();
+    return effects().reply(apiBoookings);
   }
 
   @Override
