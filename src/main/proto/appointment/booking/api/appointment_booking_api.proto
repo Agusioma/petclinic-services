@@ -38,8 +38,8 @@ service AppointmentBooking {
   rpc FetchOwnerAppointments(GetOwnerAppointments) returns (Appointments) {
     option (google.api.http) = {
       get: "/appointments/owner/{owner_id}"
-     /* additional_bindings: {
-        get: "/appointments/owner/{owner_id}"
+      /*additional_bindings: {
+        get: "/carts/{cart_id}/items"
         response_body: "items"
       }*/
     };
@@ -63,20 +63,20 @@ message AppointmentDetails {
   string appointment_time = 2;
   string appointment_date = 3;
   string appointment_desc = 4;
-  string owner_id = 5;
+  //string owner_id = 5;
   string vet_id = 6;
 }
 message AddAppointmentBooking {
-  string appointment_id = 1 [(akkaserverless.field).entity_key = true];
+  string owner_id = 1 [(akkaserverless.field).entity_key = true];
   string appointment_time = 2;
   string appointment_date = 3;
   string appointment_desc = 4;
-  string owner_id = 5;
+  string appointment_id = 5;
   string vet_id = 6;
 }
 
 message DeleteAppointmentBooking {
-  string appointment_id = 1 [(akkaserverless.field).entity_key = true];;
+  string appointment_id = 1 [(akkaserverless.field).entity_key = true];
 }
 
 message GetOwnerAppointments{

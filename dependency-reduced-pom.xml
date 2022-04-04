@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.akkasls</groupId>
-  <artifactId>petclinic-services</artifactId>
+  <artifactId>petclinic</artifactId>
   <name>PetClinic Services</name>
   <version>1.0-SNAPSHOT</version>
   <build>
@@ -286,7 +286,7 @@
     <akka-grpc.version>2.1.2</akka-grpc.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tag>1</tag>
-    <dockerTag>totala</dockerTag>
+    <dockerTag>ownertest3</dockerTag>
   </properties>
 </project>
 

@@ -860,23 +860,19 @@ public final class AppointmentBookingApi {
         getAppointmentDescBytes();
 
     /**
-     * <code>string owner_id = 5;</code>
-     * @return The ownerId.
-     */
-    java.lang.String getOwnerId();
-    /**
-     * <code>string owner_id = 5;</code>
-     * @return The bytes for ownerId.
-     */
-    com.google.protobuf.ByteString
-        getOwnerIdBytes();
-
-    /**
+     * <pre>
+     *string owner_id = 5;
+     * </pre>
+     *
      * <code>string vet_id = 6;</code>
      * @return The vetId.
      */
     java.lang.String getVetId();
     /**
+     * <pre>
+     *string owner_id = 5;
+     * </pre>
+     *
      * <code>string vet_id = 6;</code>
      * @return The bytes for vetId.
      */
@@ -900,7 +896,6 @@ public final class AppointmentBookingApi {
       appointmentTime_ = "";
       appointmentDate_ = "";
       appointmentDesc_ = "";
-      ownerId_ = "";
       vetId_ = "";
     }
 
@@ -956,12 +951,6 @@ public final class AppointmentBookingApi {
               java.lang.String s = input.readStringRequireUtf8();
 
               appointmentDesc_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ownerId_ = s;
               break;
             }
             case 50: {
@@ -1154,47 +1143,13 @@ public final class AppointmentBookingApi {
       }
     }
 
-    public static final int OWNER_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object ownerId_;
-    /**
-     * <code>string owner_id = 5;</code>
-     * @return The ownerId.
-     */
-    @java.lang.Override
-    public java.lang.String getOwnerId() {
-      java.lang.Object ref = ownerId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ownerId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string owner_id = 5;</code>
-     * @return The bytes for ownerId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOwnerIdBytes() {
-      java.lang.Object ref = ownerId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ownerId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int VET_ID_FIELD_NUMBER = 6;
     private volatile java.lang.Object vetId_;
     /**
+     * <pre>
+     *string owner_id = 5;
+     * </pre>
+     *
      * <code>string vet_id = 6;</code>
      * @return The vetId.
      */
@@ -1212,6 +1167,10 @@ public final class AppointmentBookingApi {
       }
     }
     /**
+     * <pre>
+     *string owner_id = 5;
+     * </pre>
+     *
      * <code>string vet_id = 6;</code>
      * @return The bytes for vetId.
      */
@@ -1256,9 +1215,6 @@ public final class AppointmentBookingApi {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentDesc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appointmentDesc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ownerId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vetId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, vetId_);
       }
@@ -1282,9 +1238,6 @@ public final class AppointmentBookingApi {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentDesc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appointmentDesc_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ownerId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vetId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, vetId_);
@@ -1312,8 +1265,6 @@ public final class AppointmentBookingApi {
           .equals(other.getAppointmentDate())) return false;
       if (!getAppointmentDesc()
           .equals(other.getAppointmentDesc())) return false;
-      if (!getOwnerId()
-          .equals(other.getOwnerId())) return false;
       if (!getVetId()
           .equals(other.getVetId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1335,8 +1286,6 @@ public final class AppointmentBookingApi {
       hash = (53 * hash) + getAppointmentDate().hashCode();
       hash = (37 * hash) + APPOINTMENT_DESC_FIELD_NUMBER;
       hash = (53 * hash) + getAppointmentDesc().hashCode();
-      hash = (37 * hash) + OWNER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOwnerId().hashCode();
       hash = (37 * hash) + VET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVetId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1480,8 +1429,6 @@ public final class AppointmentBookingApi {
 
         appointmentDesc_ = "";
 
-        ownerId_ = "";
-
         vetId_ = "";
 
         return this;
@@ -1514,7 +1461,6 @@ public final class AppointmentBookingApi {
         result.appointmentTime_ = appointmentTime_;
         result.appointmentDate_ = appointmentDate_;
         result.appointmentDesc_ = appointmentDesc_;
-        result.ownerId_ = ownerId_;
         result.vetId_ = vetId_;
         onBuilt();
         return result;
@@ -1578,10 +1524,6 @@ public final class AppointmentBookingApi {
         }
         if (!other.getAppointmentDesc().isEmpty()) {
           appointmentDesc_ = other.appointmentDesc_;
-          onChanged();
-        }
-        if (!other.getOwnerId().isEmpty()) {
-          ownerId_ = other.ownerId_;
           onChanged();
         }
         if (!other.getVetId().isEmpty()) {
@@ -1921,84 +1863,12 @@ public final class AppointmentBookingApi {
         return this;
       }
 
-      private java.lang.Object ownerId_ = "";
-      /**
-       * <code>string owner_id = 5;</code>
-       * @return The ownerId.
-       */
-      public java.lang.String getOwnerId() {
-        java.lang.Object ref = ownerId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ownerId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string owner_id = 5;</code>
-       * @return The bytes for ownerId.
-       */
-      public com.google.protobuf.ByteString
-          getOwnerIdBytes() {
-        java.lang.Object ref = ownerId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ownerId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string owner_id = 5;</code>
-       * @param value The ownerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOwnerId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ownerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string owner_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOwnerId() {
-        
-        ownerId_ = getDefaultInstance().getOwnerId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string owner_id = 5;</code>
-       * @param value The bytes for ownerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOwnerIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ownerId_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object vetId_ = "";
       /**
+       * <pre>
+       *string owner_id = 5;
+       * </pre>
+       *
        * <code>string vet_id = 6;</code>
        * @return The vetId.
        */
@@ -2015,6 +1885,10 @@ public final class AppointmentBookingApi {
         }
       }
       /**
+       * <pre>
+       *string owner_id = 5;
+       * </pre>
+       *
        * <code>string vet_id = 6;</code>
        * @return The bytes for vetId.
        */
@@ -2032,6 +1906,10 @@ public final class AppointmentBookingApi {
         }
       }
       /**
+       * <pre>
+       *string owner_id = 5;
+       * </pre>
+       *
        * <code>string vet_id = 6;</code>
        * @param value The vetId to set.
        * @return This builder for chaining.
@@ -2047,6 +1925,10 @@ public final class AppointmentBookingApi {
         return this;
       }
       /**
+       * <pre>
+       *string owner_id = 5;
+       * </pre>
+       *
        * <code>string vet_id = 6;</code>
        * @return This builder for chaining.
        */
@@ -2057,6 +1939,10 @@ public final class AppointmentBookingApi {
         return this;
       }
       /**
+       * <pre>
+       *string owner_id = 5;
+       * </pre>
+       *
        * <code>string vet_id = 6;</code>
        * @param value The bytes for vetId to set.
        * @return This builder for chaining.
@@ -2130,16 +2016,16 @@ public final class AppointmentBookingApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-     * @return The appointmentId.
+     * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+     * @return The ownerId.
      */
-    java.lang.String getAppointmentId();
+    java.lang.String getOwnerId();
     /**
-     * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-     * @return The bytes for appointmentId.
+     * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+     * @return The bytes for ownerId.
      */
     com.google.protobuf.ByteString
-        getAppointmentIdBytes();
+        getOwnerIdBytes();
 
     /**
      * <code>string appointment_time = 2;</code>
@@ -2178,16 +2064,16 @@ public final class AppointmentBookingApi {
         getAppointmentDescBytes();
 
     /**
-     * <code>string owner_id = 5;</code>
-     * @return The ownerId.
+     * <code>string appointment_id = 5;</code>
+     * @return The appointmentId.
      */
-    java.lang.String getOwnerId();
+    java.lang.String getAppointmentId();
     /**
-     * <code>string owner_id = 5;</code>
-     * @return The bytes for ownerId.
+     * <code>string appointment_id = 5;</code>
+     * @return The bytes for appointmentId.
      */
     com.google.protobuf.ByteString
-        getOwnerIdBytes();
+        getAppointmentIdBytes();
 
     /**
      * <code>string vet_id = 6;</code>
@@ -2214,11 +2100,11 @@ public final class AppointmentBookingApi {
       super(builder);
     }
     private AddAppointmentBooking() {
-      appointmentId_ = "";
+      ownerId_ = "";
       appointmentTime_ = "";
       appointmentDate_ = "";
       appointmentDesc_ = "";
-      ownerId_ = "";
+      appointmentId_ = "";
       vetId_ = "";
     }
 
@@ -2255,7 +2141,7 @@ public final class AppointmentBookingApi {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              appointmentId_ = s;
+              ownerId_ = s;
               break;
             }
             case 18: {
@@ -2279,7 +2165,7 @@ public final class AppointmentBookingApi {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              ownerId_ = s;
+              appointmentId_ = s;
               break;
             }
             case 50: {
@@ -2320,38 +2206,38 @@ public final class AppointmentBookingApi {
               appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking.class, appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking.Builder.class);
     }
 
-    public static final int APPOINTMENT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object appointmentId_;
+    public static final int OWNER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ownerId_;
     /**
-     * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-     * @return The appointmentId.
+     * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+     * @return The ownerId.
      */
     @java.lang.Override
-    public java.lang.String getAppointmentId() {
-      java.lang.Object ref = appointmentId_;
+    public java.lang.String getOwnerId() {
+      java.lang.Object ref = ownerId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        appointmentId_ = s;
+        ownerId_ = s;
         return s;
       }
     }
     /**
-     * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-     * @return The bytes for appointmentId.
+     * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+     * @return The bytes for ownerId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getAppointmentIdBytes() {
-      java.lang.Object ref = appointmentId_;
+        getOwnerIdBytes() {
+      java.lang.Object ref = ownerId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        appointmentId_ = b;
+        ownerId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2472,38 +2358,38 @@ public final class AppointmentBookingApi {
       }
     }
 
-    public static final int OWNER_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object ownerId_;
+    public static final int APPOINTMENT_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object appointmentId_;
     /**
-     * <code>string owner_id = 5;</code>
-     * @return The ownerId.
+     * <code>string appointment_id = 5;</code>
+     * @return The appointmentId.
      */
     @java.lang.Override
-    public java.lang.String getOwnerId() {
-      java.lang.Object ref = ownerId_;
+    public java.lang.String getAppointmentId() {
+      java.lang.Object ref = appointmentId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ownerId_ = s;
+        appointmentId_ = s;
         return s;
       }
     }
     /**
-     * <code>string owner_id = 5;</code>
-     * @return The bytes for ownerId.
+     * <code>string appointment_id = 5;</code>
+     * @return The bytes for appointmentId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getOwnerIdBytes() {
-      java.lang.Object ref = ownerId_;
+        getAppointmentIdBytes() {
+      java.lang.Object ref = appointmentId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        ownerId_ = b;
+        appointmentId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2562,8 +2448,8 @@ public final class AppointmentBookingApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, appointmentId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ownerId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentTime_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appointmentTime_);
@@ -2574,8 +2460,8 @@ public final class AppointmentBookingApi {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentDesc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appointmentDesc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ownerId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appointmentId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vetId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, vetId_);
@@ -2589,8 +2475,8 @@ public final class AppointmentBookingApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, appointmentId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ownerId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentTime_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appointmentTime_);
@@ -2601,8 +2487,8 @@ public final class AppointmentBookingApi {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentDesc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appointmentDesc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ownerId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appointmentId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appointmentId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vetId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, vetId_);
@@ -2622,16 +2508,16 @@ public final class AppointmentBookingApi {
       }
       appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking other = (appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking) obj;
 
-      if (!getAppointmentId()
-          .equals(other.getAppointmentId())) return false;
+      if (!getOwnerId()
+          .equals(other.getOwnerId())) return false;
       if (!getAppointmentTime()
           .equals(other.getAppointmentTime())) return false;
       if (!getAppointmentDate()
           .equals(other.getAppointmentDate())) return false;
       if (!getAppointmentDesc()
           .equals(other.getAppointmentDesc())) return false;
-      if (!getOwnerId()
-          .equals(other.getOwnerId())) return false;
+      if (!getAppointmentId()
+          .equals(other.getAppointmentId())) return false;
       if (!getVetId()
           .equals(other.getVetId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2645,16 +2531,16 @@ public final class AppointmentBookingApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + APPOINTMENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAppointmentId().hashCode();
+      hash = (37 * hash) + OWNER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOwnerId().hashCode();
       hash = (37 * hash) + APPOINTMENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getAppointmentTime().hashCode();
       hash = (37 * hash) + APPOINTMENT_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getAppointmentDate().hashCode();
       hash = (37 * hash) + APPOINTMENT_DESC_FIELD_NUMBER;
       hash = (53 * hash) + getAppointmentDesc().hashCode();
-      hash = (37 * hash) + OWNER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOwnerId().hashCode();
+      hash = (37 * hash) + APPOINTMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAppointmentId().hashCode();
       hash = (37 * hash) + VET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVetId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2790,7 +2676,7 @@ public final class AppointmentBookingApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        appointmentId_ = "";
+        ownerId_ = "";
 
         appointmentTime_ = "";
 
@@ -2798,7 +2684,7 @@ public final class AppointmentBookingApi {
 
         appointmentDesc_ = "";
 
-        ownerId_ = "";
+        appointmentId_ = "";
 
         vetId_ = "";
 
@@ -2828,11 +2714,11 @@ public final class AppointmentBookingApi {
       @java.lang.Override
       public appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking buildPartial() {
         appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking result = new appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking(this);
-        result.appointmentId_ = appointmentId_;
+        result.ownerId_ = ownerId_;
         result.appointmentTime_ = appointmentTime_;
         result.appointmentDate_ = appointmentDate_;
         result.appointmentDesc_ = appointmentDesc_;
-        result.ownerId_ = ownerId_;
+        result.appointmentId_ = appointmentId_;
         result.vetId_ = vetId_;
         onBuilt();
         return result;
@@ -2882,8 +2768,8 @@ public final class AppointmentBookingApi {
 
       public Builder mergeFrom(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking other) {
         if (other == appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking.getDefaultInstance()) return this;
-        if (!other.getAppointmentId().isEmpty()) {
-          appointmentId_ = other.appointmentId_;
+        if (!other.getOwnerId().isEmpty()) {
+          ownerId_ = other.ownerId_;
           onChanged();
         }
         if (!other.getAppointmentTime().isEmpty()) {
@@ -2898,8 +2784,8 @@ public final class AppointmentBookingApi {
           appointmentDesc_ = other.appointmentDesc_;
           onChanged();
         }
-        if (!other.getOwnerId().isEmpty()) {
-          ownerId_ = other.ownerId_;
+        if (!other.getAppointmentId().isEmpty()) {
+          appointmentId_ = other.appointmentId_;
           onChanged();
         }
         if (!other.getVetId().isEmpty()) {
@@ -2935,78 +2821,78 @@ public final class AppointmentBookingApi {
         return this;
       }
 
-      private java.lang.Object appointmentId_ = "";
+      private java.lang.Object ownerId_ = "";
       /**
-       * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-       * @return The appointmentId.
+       * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+       * @return The ownerId.
        */
-      public java.lang.String getAppointmentId() {
-        java.lang.Object ref = appointmentId_;
+      public java.lang.String getOwnerId() {
+        java.lang.Object ref = ownerId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          appointmentId_ = s;
+          ownerId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-       * @return The bytes for appointmentId.
+       * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+       * @return The bytes for ownerId.
        */
       public com.google.protobuf.ByteString
-          getAppointmentIdBytes() {
-        java.lang.Object ref = appointmentId_;
+          getOwnerIdBytes() {
+        java.lang.Object ref = ownerId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          appointmentId_ = b;
+          ownerId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-       * @param value The appointmentId to set.
+       * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+       * @param value The ownerId to set.
        * @return This builder for chaining.
        */
-      public Builder setAppointmentId(
+      public Builder setOwnerId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        appointmentId_ = value;
+        ownerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
+       * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearAppointmentId() {
+      public Builder clearOwnerId() {
         
-        appointmentId_ = getDefaultInstance().getAppointmentId();
+        ownerId_ = getDefaultInstance().getOwnerId();
         onChanged();
         return this;
       }
       /**
-       * <code>string appointment_id = 1 [(.akkaserverless.field) = { ... }</code>
-       * @param value The bytes for appointmentId to set.
+       * <code>string owner_id = 1 [(.akkaserverless.field) = { ... }</code>
+       * @param value The bytes for ownerId to set.
        * @return This builder for chaining.
        */
-      public Builder setAppointmentIdBytes(
+      public Builder setOwnerIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        appointmentId_ = value;
+        ownerId_ = value;
         onChanged();
         return this;
       }
@@ -3239,78 +3125,78 @@ public final class AppointmentBookingApi {
         return this;
       }
 
-      private java.lang.Object ownerId_ = "";
+      private java.lang.Object appointmentId_ = "";
       /**
-       * <code>string owner_id = 5;</code>
-       * @return The ownerId.
+       * <code>string appointment_id = 5;</code>
+       * @return The appointmentId.
        */
-      public java.lang.String getOwnerId() {
-        java.lang.Object ref = ownerId_;
+      public java.lang.String getAppointmentId() {
+        java.lang.Object ref = appointmentId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ownerId_ = s;
+          appointmentId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string owner_id = 5;</code>
-       * @return The bytes for ownerId.
+       * <code>string appointment_id = 5;</code>
+       * @return The bytes for appointmentId.
        */
       public com.google.protobuf.ByteString
-          getOwnerIdBytes() {
-        java.lang.Object ref = ownerId_;
+          getAppointmentIdBytes() {
+        java.lang.Object ref = appointmentId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          ownerId_ = b;
+          appointmentId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string owner_id = 5;</code>
-       * @param value The ownerId to set.
+       * <code>string appointment_id = 5;</code>
+       * @param value The appointmentId to set.
        * @return This builder for chaining.
        */
-      public Builder setOwnerId(
+      public Builder setAppointmentId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        ownerId_ = value;
+        appointmentId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string owner_id = 5;</code>
+       * <code>string appointment_id = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOwnerId() {
+      public Builder clearAppointmentId() {
         
-        ownerId_ = getDefaultInstance().getOwnerId();
+        appointmentId_ = getDefaultInstance().getAppointmentId();
         onChanged();
         return this;
       }
       /**
-       * <code>string owner_id = 5;</code>
-       * @param value The bytes for ownerId to set.
+       * <code>string appointment_id = 5;</code>
+       * @param value The bytes for appointmentId to set.
        * @return This builder for chaining.
        */
-      public Builder setOwnerIdBytes(
+      public Builder setAppointmentIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        ownerId_ = value;
+        appointmentId_ = value;
         onChanged();
         return this;
       }
@@ -5192,44 +5078,44 @@ public final class AppointmentBookingApi {
       "le/api/annotations.proto\032\033google/protobu" +
       "f/empty.proto\"M\n\014Appointments\022=\n\010booking" +
       "s\030\001 \003(\0132+.appointment.booking.api.Appoin" +
-      "tmentDetails\"\234\001\n\022AppointmentDetails\022\026\n\016a" +
+      "tmentDetails\"\212\001\n\022AppointmentDetails\022\026\n\016a" +
       "ppointment_id\030\001 \001(\t\022\030\n\020appointment_time\030" +
       "\002 \001(\t\022\030\n\020appointment_date\030\003 \001(\t\022\030\n\020appoi" +
-      "ntment_desc\030\004 \001(\t\022\020\n\010owner_id\030\005 \001(\t\022\016\n\006v" +
-      "et_id\030\006 \001(\t\"\246\001\n\025AddAppointmentBooking\022\035\n" +
-      "\016appointment_id\030\001 \001(\tB\005\302C\002\010\001\022\030\n\020appointm" +
-      "ent_time\030\002 \001(\t\022\030\n\020appointment_date\030\003 \001(\t" +
-      "\022\030\n\020appointment_desc\030\004 \001(\t\022\020\n\010owner_id\030\005" +
-      " \001(\t\022\016\n\006vet_id\030\006 \001(\t\"9\n\030DeleteAppointmen" +
-      "tBooking\022\035\n\016appointment_id\030\001 \001(\tB\005\302C\002\010\001\"" +
-      "/\n\024GetOwnerAppointments\022\027\n\010owner_id\030\001 \001(" +
-      "\tB\005\302C\002\010\001\"+\n\022GetVetAppointments\022\025\n\006vet_id" +
-      "\030\001 \001(\tB\005\302C\002\010\0012\330\007\n\022AppointmentBooking\022\215\001\n" +
-      "\021CreateAppointment\022..appointment.booking" +
-      ".api.AddAppointmentBooking\032\026.google.prot" +
-      "obuf.Empty\"0\202\323\344\223\002*\"%/appointments/{owner" +
-      "_id}/{vet_id}/new:\001*\022\213\001\n\021UpdateAppointme" +
-      "nt\022..appointment.booking.api.AddAppointm" +
-      "entBooking\032\026.google.protobuf.Empty\".\202\323\344\223" +
-      "\002(\"#/appointments/{appointment_id}/edit:" +
-      "\001*\022\215\001\n\021DeleteAppointment\0221.appointment.b" +
-      "ooking.api.DeleteAppointmentBooking\032\026.go" +
-      "ogle.protobuf.Empty\"-\202\323\344\223\002\'\"%/appointmen" +
-      "ts/{appointment_id}/delete\022\226\001\n\026FetchOwne" +
-      "rAppointments\022-.appointment.booking.api." +
-      "GetOwnerAppointments\032%.appointment.booki" +
-      "ng.api.Appointments\"&\202\323\344\223\002 \022\036/appointmen" +
-      "ts/owner/{owner_id}\022\216\001\n\024FetchVetAppointm" +
-      "ents\022+.appointment.booking.api.GetVetApp" +
-      "ointments\032%.appointment.booking.api.Appo" +
-      "intments\"\"\202\323\344\223\002\034\022\032/appointments/vet/{vet" +
-      "_id}\032\351\001\312C\345\001\n\342\001\n3appointment.booking.doma" +
-      "in.AppointmentBookingEntity\022 eventsource" +
-      "d-appointment-booking\032+appointment.booki" +
-      "ng.domain.AppointmentState\"-appointment." +
-      "booking.domain.AppointmentCreated\"-appoi" +
-      "ntment.booking.domain.AppointmentDeleted" +
-      "B\027B\025AppointmentBookingApib\006proto3"
+      "ntment_desc\030\004 \001(\t\022\016\n\006vet_id\030\006 \001(\t\"\246\001\n\025Ad" +
+      "dAppointmentBooking\022\027\n\010owner_id\030\001 \001(\tB\005\302" +
+      "C\002\010\001\022\030\n\020appointment_time\030\002 \001(\t\022\030\n\020appoin" +
+      "tment_date\030\003 \001(\t\022\030\n\020appointment_desc\030\004 \001" +
+      "(\t\022\026\n\016appointment_id\030\005 \001(\t\022\016\n\006vet_id\030\006 \001" +
+      "(\t\"9\n\030DeleteAppointmentBooking\022\035\n\016appoin" +
+      "tment_id\030\001 \001(\tB\005\302C\002\010\001\"/\n\024GetOwnerAppoint" +
+      "ments\022\027\n\010owner_id\030\001 \001(\tB\005\302C\002\010\001\"+\n\022GetVet" +
+      "Appointments\022\025\n\006vet_id\030\001 \001(\tB\005\302C\002\010\0012\330\007\n\022" +
+      "AppointmentBooking\022\215\001\n\021CreateAppointment" +
+      "\022..appointment.booking.api.AddAppointmen" +
+      "tBooking\032\026.google.protobuf.Empty\"0\202\323\344\223\002*" +
+      "\"%/appointments/{owner_id}/{vet_id}/new:" +
+      "\001*\022\213\001\n\021UpdateAppointment\022..appointment.b" +
+      "ooking.api.AddAppointmentBooking\032\026.googl" +
+      "e.protobuf.Empty\".\202\323\344\223\002(\"#/appointments/" +
+      "{appointment_id}/edit:\001*\022\215\001\n\021DeleteAppoi" +
+      "ntment\0221.appointment.booking.api.DeleteA" +
+      "ppointmentBooking\032\026.google.protobuf.Empt" +
+      "y\"-\202\323\344\223\002\'\"%/appointments/{appointment_id" +
+      "}/delete\022\226\001\n\026FetchOwnerAppointments\022-.ap" +
+      "pointment.booking.api.GetOwnerAppointmen" +
+      "ts\032%.appointment.booking.api.Appointment" +
+      "s\"&\202\323\344\223\002 \022\036/appointments/owner/{owner_id" +
+      "}\022\216\001\n\024FetchVetAppointments\022+.appointment" +
+      ".booking.api.GetVetAppointments\032%.appoin" +
+      "tment.booking.api.Appointments\"\"\202\323\344\223\002\034\022\032" +
+      "/appointments/vet/{vet_id}\032\351\001\312C\345\001\n\342\001\n3ap" +
+      "pointment.booking.domain.AppointmentBook" +
+      "ingEntity\022 eventsourced-appointment-book" +
+      "ing\032+appointment.booking.domain.Appointm" +
+      "entState\"-appointment.booking.domain.App" +
+      "ointmentCreated\"-appointment.booking.dom" +
+      "ain.AppointmentDeletedB\027B\025AppointmentBoo" +
+      "kingApib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5249,13 +5135,13 @@ public final class AppointmentBookingApi {
     internal_static_appointment_booking_api_AppointmentDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_appointment_booking_api_AppointmentDetails_descriptor,
-        new java.lang.String[] { "AppointmentId", "AppointmentTime", "AppointmentDate", "AppointmentDesc", "OwnerId", "VetId", });
+        new java.lang.String[] { "AppointmentId", "AppointmentTime", "AppointmentDate", "AppointmentDesc", "VetId", });
     internal_static_appointment_booking_api_AddAppointmentBooking_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_appointment_booking_api_AddAppointmentBooking_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_appointment_booking_api_AddAppointmentBooking_descriptor,
-        new java.lang.String[] { "AppointmentId", "AppointmentTime", "AppointmentDate", "AppointmentDesc", "OwnerId", "VetId", });
+        new java.lang.String[] { "OwnerId", "AppointmentTime", "AppointmentDate", "AppointmentDesc", "AppointmentId", "VetId", });
     internal_static_appointment_booking_api_DeleteAppointmentBooking_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_appointment_booking_api_DeleteAppointmentBooking_fieldAccessorTable = new
