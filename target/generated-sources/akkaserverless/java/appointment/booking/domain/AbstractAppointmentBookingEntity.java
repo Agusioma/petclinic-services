@@ -18,7 +18,7 @@ public abstract class AbstractAppointmentBookingEntity extends EventSourcedEntit
 
   public abstract Effect<Empty> createAppointment(AppointmentBookingDomain.AppointmentState currentState, AppointmentBookingApi.AddAppointmentBooking addAppointmentBooking);
 
-  public abstract Effect<Empty> updateAppointment(AppointmentBookingDomain.AppointmentState currentState, AppointmentBookingApi.AddAppointmentBooking addAppointmentBooking);
+  public abstract Effect<Empty> updateAppointment(AppointmentBookingDomain.AppointmentState currentState, AppointmentBookingApi.EditAppointmentBooking editAppointmentBooking);
 
   public abstract Effect<Empty> deleteAppointment(AppointmentBookingDomain.AppointmentState currentState, AppointmentBookingApi.DeleteAppointmentBooking deleteAppointmentBooking);
 

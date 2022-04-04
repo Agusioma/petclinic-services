@@ -15,7 +15,7 @@ public interface Components {
   interface AppointmentBookingEntityCalls {
     DeferredCall<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty> createAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking addAppointmentBooking);
 
-    DeferredCall<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking addAppointmentBooking);
+    DeferredCall<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking, com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking editAppointmentBooking);
 
     DeferredCall<appointment.booking.api.AppointmentBookingApi.DeleteAppointmentBooking, com.google.protobuf.Empty> deleteAppointment(appointment.booking.api.AppointmentBookingApi.DeleteAppointmentBooking deleteAppointmentBooking);
 

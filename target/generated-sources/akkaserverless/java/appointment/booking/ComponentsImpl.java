@@ -42,13 +42,13 @@ public final class ComponentsImpl implements Components {
       );
     }
     @Override
-    public DeferredCall<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking addAppointmentBooking) {
+    public DeferredCall<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking, com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking editAppointmentBooking) {
       return new DeferredCallImpl<>(
-        addAppointmentBooking,
+        editAppointmentBooking,
         MetadataImpl.Empty(),
         "appointment.booking.api.AppointmentBooking",
         "UpdateAppointment",
-        () -> getGrpcClient(appointment.booking.api.AppointmentBooking.class).updateAppointment(addAppointmentBooking)
+        () -> getGrpcClient(appointment.booking.api.AppointmentBooking.class).updateAppointment(editAppointmentBooking)
       );
     }
     @Override

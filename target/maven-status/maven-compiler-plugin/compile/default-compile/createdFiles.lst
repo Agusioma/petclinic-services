@@ -19,6 +19,7 @@ appointment/booking/domain/AppointmentBookingDomain$AppointmentStateOrBuilder.cl
 appointment/booking/api/AppointmentBookingApi$AppointmentDetails.class
 appointment/booking/domain/AppointmentBookingDomain$AppointmentState.class
 appointment/booking/api/AppointmentBookingApi$GetVetAppointments$1.class
+appointment/booking/api/AppointmentBookingApi$EditAppointmentBooking$1.class
 appointment/booking/domain/AppointmentBookingEntity.class
 appointment/booking/Components$AppointmentBookingEntityCalls.class
 appointment/booking/api/AppointmentBookingApi$DeleteAppointmentBookingOrBuilder.class
@@ -31,6 +32,7 @@ appointment/booking/api/AppointmentBookingApi$GetOwnerAppointments.class
 appointment/booking/domain/AppointmentBookingDomain$AppointmentState$Builder.class
 appointment/booking/api/AppointmentBookingClient$DefaultAppointmentBookingClient.class
 appointment/booking/api/AppointmentBooking$Serializers.class
+appointment/booking/api/AppointmentBookingApi$EditAppointmentBooking$Builder.class
 appointment/booking/api/AppointmentBookingApi$AppointmentDetails$Builder.class
 appointment/booking/api/AppointmentBookingApi$AddAppointmentBooking$1.class
 appointment/booking/api/AppointmentBookingHandlerFactory.class
@@ -40,6 +42,7 @@ appointment/booking/api/AppointmentBookingApi.class
 appointment/booking/domain/AppointmentBookingDomain$AppointmentDetails.class
 appointment/booking/api/AppointmentBookingApi$GetOwnerAppointmentsOrBuilder.class
 appointment/booking/domain/AppointmentBookingDomain$AppointmentDeletedOrBuilder.class
+appointment/booking/api/AppointmentBookingApi$EditAppointmentBooking.class
 appointment/booking/domain/AppointmentBookingDomain$AppointmentDeleted$1.class
 appointment/booking/api/AppointmentBookingApi$GetVetAppointments$Builder.class
 appointment/booking/ComponentsImpl$AppointmentBookingEntityCallsImpl.class
@@ -48,6 +51,7 @@ appointment/booking/Components.class
 appointment/booking/domain/AppointmentBookingDomain$AppointmentCreatedOrBuilder.class
 appointment/booking/Main.class
 appointment/booking/api/AppointmentBookingApi$GetVetAppointments.class
+appointment/booking/api/AppointmentBookingApi$EditAppointmentBookingOrBuilder.class
 appointment/booking/api/AppointmentBookingApi$GetVetAppointmentsOrBuilder.class
 appointment/booking/api/AppointmentBookingClient.class
 appointment/booking/AkkaServerlessFactory.class

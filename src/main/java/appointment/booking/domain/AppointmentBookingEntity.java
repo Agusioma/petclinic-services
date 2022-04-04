@@ -1,8 +1,6 @@
 package appointment.booking.domain;
 
 import appointment.booking.api.AppointmentBookingApi;
-import com.akkaserverless.javasdk.eventsourcedentity.EventSourcedEntity;
-import com.akkaserverless.javasdk.eventsourcedentity.EventSourcedEntity.Effect;
 import com.akkaserverless.javasdk.eventsourcedentity.EventSourcedEntityContext;
 import com.google.protobuf.Empty;
 
@@ -52,8 +50,19 @@ public class AppointmentBookingEntity extends AbstractAppointmentBookingEntity {
 
   @Override
   public Effect<Empty> updateAppointment(AppointmentBookingDomain.AppointmentState currentState,
-                                         AppointmentBookingApi.AddAppointmentBooking addAppointmentBooking) {
-    return effects().error("The command handler for `UpdateAppointment` is not implemented, yet");
+                                         AppointmentBookingApi.EditAppointmentBooking editAppointmentBooking) {
+    AppointmentBookingDomain.AppointmentCreated appointmentEditedEvent = AppointmentBookingDomain.AppointmentCreated
+            .newBuilder()
+            .setAppointment(AppointmentBookingDomain.AppointmentDetails.newBuilder()
+                    .setAppointmentId(editAppointmentBooking.getAppointmentId())
+                    .setAppointmentDate(editAppointmentBooking.getAppointmentDate())
+                    .setAppointmentTime(editAppointmentBooking.getAppointmentTime())
+                    .setAppointmentDesc(editAppointmentBooking.getAppointmentDesc())
+                    //.setOwnerId(addAppointmentBooking.getOwnerId())
+                    .setVetId(editAppointmentBooking.getVetId())
+                    .build())
+            .build();
+    return effects().emitEvent(appointmentEditedEvent).thenReply(__ -> Empty.getDefaultInstance());
   }
 
   @Override

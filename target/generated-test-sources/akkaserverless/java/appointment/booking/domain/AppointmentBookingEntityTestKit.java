@@ -72,7 +72,7 @@ public final class AppointmentBookingEntityTestKit extends EventSourcedEntityEff
     return interpretEffects(() -> entity.createAppointment(getState(), command));
   }
 
-  public EventSourcedResult<Empty> updateAppointment(AppointmentBookingApi.AddAppointmentBooking command) {
+  public EventSourcedResult<Empty> updateAppointment(AppointmentBookingApi.EditAppointmentBooking command) {
     return interpretEffects(() -> entity.updateAppointment(getState(), command));
   }
 

@@ -21,10 +21,10 @@ public abstract class AppointmentBookingClientPowerApi {
   
     /**
      * Lower level "lifted" version of the method, giving access to request metadata etc.
-     * prefer updateAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking) if possible.
+     * prefer updateAppointment(appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking) if possible.
      */
     
-      public SingleResponseRequestBuilder<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty> updateAppointment()
+      public SingleResponseRequestBuilder<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking, com.google.protobuf.Empty> updateAppointment()
     
     {
         throw new java.lang.UnsupportedOperationException();

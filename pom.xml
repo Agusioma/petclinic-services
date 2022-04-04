@@ -13,7 +13,7 @@
     <!-- TODO Update to your own Docker repository or Docker Hub scope -->
     <dockerImage>gcr.io/rosy-timer-340109/${project.artifactId}</dockerImage>
     <tag>1</tag>
-    <dockerTag>ownertest7</dockerTag>
+    <dockerTag>ownertest9</dockerTag>
     <mainClass>appointment.booking.Main</mainClass>
 
     <jdk.target>11</jdk.target>

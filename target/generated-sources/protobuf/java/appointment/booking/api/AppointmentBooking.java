@@ -12,7 +12,7 @@ public interface AppointmentBooking {
   java.util.concurrent.CompletionStage<com.google.protobuf.Empty> createAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking in);
   
   
-  java.util.concurrent.CompletionStage<com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking in);
+  java.util.concurrent.CompletionStage<com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking in);
   
   
   java.util.concurrent.CompletionStage<com.google.protobuf.Empty> deleteAppointment(appointment.booking.api.AppointmentBookingApi.DeleteAppointmentBooking in);
@@ -30,6 +30,8 @@ public interface AppointmentBooking {
   public static class Serializers {
     
       public static ProtobufSerializer<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking> AddAppointmentBookingSerializer = new GoogleProtobufSerializer<>(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking.parser());
+    
+      public static ProtobufSerializer<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking> EditAppointmentBookingSerializer = new GoogleProtobufSerializer<>(appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking.parser());
     
       public static ProtobufSerializer<appointment.booking.api.AppointmentBookingApi.DeleteAppointmentBooking> DeleteAppointmentBookingSerializer = new GoogleProtobufSerializer<>(appointment.booking.api.AppointmentBookingApi.DeleteAppointmentBooking.parser());
     

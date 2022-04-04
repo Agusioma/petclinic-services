@@ -157,7 +157,7 @@ public class AppointmentBookingHandlerFactory {
             break;
           
           case "UpdateAppointment":
-            response = GrpcMarshalling.unmarshal(request.entity(), AddAppointmentBookingSerializer, mat, reader)
+            response = GrpcMarshalling.unmarshal(request.entity(), EditAppointmentBookingSerializer, mat, reader)
               .thenCompose(e -> implementation.updateAppointment(e))
               .thenApply(e -> GrpcMarshalling.marshal(e, EmptySerializer, writer, system, eHandler));
             break;

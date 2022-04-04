@@ -54,7 +54,7 @@ public abstract class AppointmentBookingClient extends AppointmentBookingClientP
     
   
     
-      private final SingleResponseRequestBuilder<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty> updateAppointmentRequestBuilder(akka.grpc.internal.InternalChannel channel){
+      private final SingleResponseRequestBuilder<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking, com.google.protobuf.Empty> updateAppointmentRequestBuilder(akka.grpc.internal.InternalChannel channel){
         return new JavaUnaryRequestBuilder<>(updateAppointmentDescriptor, channel, options, settings, ec);
       }
     
@@ -102,16 +102,16 @@ public abstract class AppointmentBookingClient extends AppointmentBookingClientP
         /**
          * For access to method metadata use the parameterless version of updateAppointment
          */
-        public java.util.concurrent.CompletionStage<com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking request) {
+        public java.util.concurrent.CompletionStage<com.google.protobuf.Empty> updateAppointment(appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking request) {
           return updateAppointment().invoke(request);
         }
 
         /**
          * Lower level "lifted" version of the method, giving access to request metadata etc.
-         * prefer updateAppointment(appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking) if possible.
+         * prefer updateAppointment(appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking) if possible.
          */
         
-          public SingleResponseRequestBuilder<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty> updateAppointment()
+          public SingleResponseRequestBuilder<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking, com.google.protobuf.Empty> updateAppointment()
         
         {
           return updateAppointmentRequestBuilder(clientState.internalChannel());
@@ -190,8 +190,8 @@ public abstract class AppointmentBookingClient extends AppointmentBookingClientP
             .setSampledToLocalTracing(true)
             .build();
         
-        private static MethodDescriptor<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty> updateAppointmentDescriptor =
-          MethodDescriptor.<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking, com.google.protobuf.Empty>newBuilder()
+        private static MethodDescriptor<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking, com.google.protobuf.Empty> updateAppointmentDescriptor =
+          MethodDescriptor.<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking, com.google.protobuf.Empty>newBuilder()
             .setType(
    MethodDescriptor.MethodType.UNARY 
   
@@ -199,7 +199,7 @@ public abstract class AppointmentBookingClient extends AppointmentBookingClientP
   
 )
             .setFullMethodName(MethodDescriptor.generateFullMethodName("appointment.booking.api.AppointmentBooking", "UpdateAppointment"))
-            .setRequestMarshaller(new ProtoMarshaller<appointment.booking.api.AppointmentBookingApi.AddAppointmentBooking>(AddAppointmentBookingSerializer))
+            .setRequestMarshaller(new ProtoMarshaller<appointment.booking.api.AppointmentBookingApi.EditAppointmentBooking>(EditAppointmentBookingSerializer))
             .setResponseMarshaller(new ProtoMarshaller<com.google.protobuf.Empty>(EmptySerializer))
             .setSampledToLocalTracing(true)
             .build();

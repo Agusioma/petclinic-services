@@ -40,7 +40,7 @@ public class AppointmentBookingEntityRouter extends EventSourcedEntityRouter<App
         return entity().createAppointment(state, (AppointmentBookingApi.AddAppointmentBooking) command);
 
       case "UpdateAppointment":
-        return entity().updateAppointment(state, (AppointmentBookingApi.AddAppointmentBooking) command);
+        return entity().updateAppointment(state, (AppointmentBookingApi.EditAppointmentBooking) command);
 
       case "DeleteAppointment":
         return entity().deleteAppointment(state, (AppointmentBookingApi.DeleteAppointmentBooking) command);
