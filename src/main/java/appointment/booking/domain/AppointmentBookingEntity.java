@@ -43,7 +43,7 @@ public class AppointmentBookingEntity extends AbstractAppointmentBookingEntity {
                     .setAppointmentDate(addAppointmentBooking.getAppointmentDate())
                     .setAppointmentTime(addAppointmentBooking.getAppointmentTime())
                     .setAppointmentDesc(addAppointmentBooking.getAppointmentDesc())
-                    .setOwnerId(addAppointmentBooking.getOwnerId())
+                    //.setOwnerId(addAppointmentBooking.getOwnerId())
                     .setVetId(addAppointmentBooking.getVetId())
                     .build())
             .build();

@@ -286,7 +286,7 @@
     <akka-grpc.version>2.1.2</akka-grpc.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tag>1</tag>
-    <dockerTag>ownertest3</dockerTag>
+    <dockerTag>ownertest6</dockerTag>
   </properties>
 </project>
 

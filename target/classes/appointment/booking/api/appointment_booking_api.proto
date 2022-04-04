@@ -76,7 +76,9 @@ message AddAppointmentBooking {
 }
 
 message DeleteAppointmentBooking {
-  string appointment_id = 1 [(akkaserverless.field).entity_key = true];
+  string owner_id = 1 [(akkaserverless.field).entity_key = true];
+  string appointment_id = 2;
+
 }
 
 message GetOwnerAppointments{

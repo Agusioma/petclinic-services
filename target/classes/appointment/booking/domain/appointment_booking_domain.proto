@@ -13,7 +13,6 @@ message AppointmentDetails {
   string appointment_time = 2;
   string appointment_date = 3;
   string appointment_desc = 4;
-  string owner_id = 5;
   string vet_id = 6;
 }
 message AppointmentCreated {
